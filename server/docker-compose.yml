@@ -1,0 +1,17 @@
+version: "3"
+services:
+  mongodb:
+    container_name: mongodb_chat_socket
+    image: mongo
+    restart: on-failure
+    ports:
+      - 27007:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: admin
+  redis:
+    container_name: redis_chat_socket
+    image: redis:alpine
+    restart: on-failure
+    ports:
+      - 6379:6379
